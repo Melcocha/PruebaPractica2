@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="comidas_mexicanas">
+        <item></item>
+        <item>Tacos al pastor</item>
+        <item>Mole poblano</item>
+        <item>Chiles en nogada</item>
+        <item>Pozole</item>
+        <item>Tamales</item>
+        <item>Ceviche</item>
+        <item>Enchiladas</item>
+    </string-array>
+    <string-array name="bebidas">
+        <item></item>
+        <item>Agua fresca</item>
+        <item>Margarita</item>
+        <item>Horchata</item>
+    </string-array>
+    <string-array name="precios_comidas_mexicanas">
+        <item></item>
+        <item>$5.99</item>
+        <item>$8.50</item>
+        <item>$7.25</item>
+        <item>$6.75</item>
+        <item>$4.99</item>
+        <item>$9.25</item>
+        <item>$6.50</item>
+    </string-array>
+    <string-array name="precios_bebidas">
+        <item></item>
+        <item>$2.50</item>
+        <item>$7.99</item>
+        <item>$3.75</item>
+    </string-array>
+
+</resources>

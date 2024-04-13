@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">PruebaPractica2</string>
+    <string name="carrito_text">Carrito</string>
+    <string name="comida_text">Comida</string>
+    <string name="historial_text">Historial</string>
+    <string name="salida_text">Salida</string>
+    <string name="cobrar_text">IR A COBRAR</string>
+
 </resources>

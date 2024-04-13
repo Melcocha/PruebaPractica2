@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".comida"
+    android:background="@drawable/background">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:titleTextColor="@android:color/white"
+        app:navigationIcon="@drawable/back"
+
+        app:layout_constraintTop_toTopOf="parent"
+        android:textAlignment="center"
+        android:onClick="irAInicio" />
+
+    <EditText
+        android:id="@+id/editTextComprador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Comprador"
+        android:inputType="text"
+
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"/>
+
+    <Spinner
+        android:id="@+id/spinnerComida"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:entries="@array/comidas_mexicanas"
+        app:layout_constraintEnd_toStartOf="@+id/editTextCantidadComida"
+
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextComprador" />
+
+    <TextView
+        android:id="@+id/textViewPrecioComida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="8dp"
+        android:text=""
+        app:layout_constraintEnd_toStartOf="@id/editTextCantidadComida"
+        app:layout_constraintStart_toEndOf="@id/spinnerComida"
+        app:layout_constraintTop_toBottomOf="@id/editTextComprador" />
+
+    <EditText
+        android:id="@+id/editTextCantidadComida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Cantidad"
+        app:layout_constraintTop_toTopOf="@id/spinnerComida"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerBebidas"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:entries="@array/bebidas"
+        app:layout_constraintEnd_toStartOf="@+id/editTextCantidadBebida"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinnerComida" />
+
+    <EditText
+        android:id="@+id/editTextCantidadBebida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Cantidad"
+        app:layout_constraintTop_toTopOf="@id/spinnerBebidas"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <TextView
+        android:id="@+id/textViewPrecioBebida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="8dp"
+        android:text=""
+        app:layout_constraintEnd_toStartOf="@id/editTextCantidadBebida"
+        app:layout_constraintStart_toEndOf="@id/spinnerBebidas"
+        app:layout_constraintTop_toBottomOf="@id/spinnerComida" />
+
+    <Button
+        android:id="@+id/buttonIrACobrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cobrar_text"
+        android:layout_margin="16dp"
+        android:textColor="#FFFFFF"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="irACarrito"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
