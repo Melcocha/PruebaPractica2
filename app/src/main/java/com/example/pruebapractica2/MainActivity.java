@@ -36,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, historial.class);
         startActivity(intent);
     }
+    public void irACerrar(View view) {
+        finishAffinity();
+    }
 
 
 

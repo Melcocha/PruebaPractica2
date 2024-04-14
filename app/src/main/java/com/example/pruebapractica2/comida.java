@@ -77,24 +77,37 @@ public class comida extends AppCompatActivity {
                 // No hacer nada si no se selecciona nada
             }
         });
+
         btnCrear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                String comidaSeleccionada = spinnerComida.getSelectedItem().toString();
+                String bebidaSeleccionada = spinnerBebidas.getSelectedItem().toString();
+                String cantidadComidaTexto = cantidadComida.getText().toString();
+                String cantidadBebidaTexto = cantidadBebida.getText().toString();
+                int cantidadComidaNumero = Integer.parseInt(cantidadComidaTexto);
+                int cantidadBebidaaNumero = Integer.parseInt(cantidadBebidaTexto);
+                TextView textViewPrecioComida = findViewById(R.id.textViewPrecioComida);
+                String precioComidaTexto = textViewPrecioComida.getText().toString();
+
+
+                //double resultado = precioComida * cantidadComidaNumero;
+
             //DbHelper dbHelper = new DbHelper(comida.this);
                 //SQLiteDatabase db = dbHelper.getWritableDatabase();
-                // if(db != null){
+                 //if(db != null){
             //Toast.makeText(comida.this,"BASE DE DATOS CREADA",Toast.LENGTH_LONG).show();
                     //}else {
             //Toast.makeText(comida.this,"BASE DE DATOS NO CREADA",Toast.LENGTH_LONG).show();
             //}
 
                 DbCarrito dbCarrito = new DbCarrito(comida.this);
-                //dbCarrito.insertarProducto(comprador.getText().toString(),cantidadComida.getText().toString(),cantidadBebida.getText().toString());
-                long id = dbCarrito.insertarProducto(comprador.getText().toString(),"Carne","Horchata",2,3,4.5);
-
+                long id = dbCarrito.insertarProducto(comprador.getText().toString(),comidaSeleccionada,bebidaSeleccionada,cantidadComidaNumero,cantidadBebidaaNumero,4.6);
                 if(id>0){
-                    Toast.makeText(comida.this,"REGISTRO GUARDADO",Toast.LENGTH_LONG).show();
+                    Toast.makeText(comida.this,"ORDEN GUARDADA",Toast.LENGTH_LONG).show();
                     limpiar();
+                    irACarrito(v);
                 }else {
                     Toast.makeText(comida.this,"ERROR AL GUARDAR",Toast.LENGTH_LONG).show();
                 }
@@ -111,8 +124,6 @@ public class comida extends AppCompatActivity {
     private void limpiar(){
         comprador.setText("");
     }
-
-
     public void irAInicio(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
@@ -121,11 +132,5 @@ public class comida extends AppCompatActivity {
         Intent intent = new Intent(this, carrito.class);
         startActivity(intent);
     }
-
-
-
-
-
-
 
 }
